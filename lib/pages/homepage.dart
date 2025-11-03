@@ -20,6 +20,11 @@ class Homepage extends StatelessWidget {
                 Navigator.pushNamed(context, 'demopost');
               }, child: Text("contoh POST = CREATE")
               ),
+              SizedBox(height: 20),
+              ElevatedButton(onPressed: (){
+                Navigator.pushNamed(context, 'demoput');
+              }, child: Text("contoh PUT = UPDATE")
+              ),
             ],
           ),
         ),

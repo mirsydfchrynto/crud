@@ -46,15 +46,15 @@ class _DemoputState extends State<Demoput> {
               ),
               SizedBox(height: 20),
             ElevatedButton(onPressed: ()async{
-              var myrespon =  await http.post(
-                Uri.parse("https://jsonplaceholder.typicode.com/users"),
+              var myrespon =  await http.put(
+                Uri.parse("https://jsonplaceholder.typicode.com/users/1"),
                 body: {
                   "nama": nameI.text,
                   "email": emailI.text,
                   "telepon": phoneI.text,
                 }
               );
-              if (myrespon.statusCode == 201){
+              if (myrespon.statusCode == 200){
                 setState(() {
                   hasil = myrespon.body;
                 });
