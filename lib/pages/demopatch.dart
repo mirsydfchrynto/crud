@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-  class Demopost extends StatefulWidget {
-    const Demopost({super.key});
+class Demopatch extends StatefulWidget {
+  const Demopatch({super.key});
 
-    @override
-    State<Demopost> createState() => _DemopostState();
-  }
+  @override
+  State<Demopatch> createState() => _DemopatchState();
+}
 
-  class _DemopostState extends State<Demopost> {
+class _DemopatchState extends State<Demopatch> {
     var hasil = "belum ada respon";
     
     TextEditingController nameI = TextEditingController();
@@ -17,7 +17,7 @@ import 'package:http/http.dart' as http;
     @override
     Widget build(BuildContext context) {
       return Scaffold(
-        appBar: AppBar(title: Text("DEMO POST")),
+        appBar: AppBar(title: Text("DEMO PATCH")),
         body: ListView(
           padding: EdgeInsets.all(20),
           children: [
@@ -46,15 +46,15 @@ import 'package:http/http.dart' as http;
               ),
               SizedBox(height: 20),
             ElevatedButton(onPressed: ()async{
-              var myrespon =  await http.post(
-                Uri.parse("https://jsonplaceholder.typicode.com/users"),
+              var myrespon =  await http.patch(
+                Uri.parse("https://jsonplaceholder.typicode.com/users/1"),
                 body: {
                   "nama": nameI.text,
                   "email": emailI.text,
                   "telepon": phoneI.text,
                 }
               );
-              if (myrespon.statusCode == 201){
+              if (myrespon.statusCode == 200){
                 setState(() {
                   hasil = myrespon.body;
                 });
@@ -74,4 +74,4 @@ import 'package:http/http.dart' as http;
         ),
       );
     }
-  }
+}
