@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-  import 'package:http/http.dart' as http;
+import 'package:http/http.dart' as http;
 
-  class Demopost extends StatefulWidget {
-    const Demopost({super.key});
+class Demoput extends StatefulWidget {
+  const Demoput({super.key});
 
-    @override
-    State<Demopost> createState() => _DemopostState();
-  }
+  @override
+  State<Demoput> createState() => _DemoputState();
+}
 
-  class _DemopostState extends State<Demopost> {
+class _DemoputState extends State<Demoput> {
     var hasil = "belum ada respon";
     
     TextEditingController nameI = TextEditingController();
@@ -17,7 +17,7 @@ import 'package:flutter/material.dart';
     @override
     Widget build(BuildContext context) {
       return Scaffold(
-        appBar: AppBar(title: Text("DEMO POST")),
+        appBar: AppBar(title: Text("DEMO PUT")),
         body: ListView(
           padding: EdgeInsets.all(20),
           children: [
@@ -74,4 +74,4 @@ import 'package:flutter/material.dart';
         ),
       );
     }
-  }
+}
