@@ -1,4 +1,5 @@
   import 'package:flutter/material.dart';
+  import 'package:http/http.dart' as http;
 
   class Demopost extends StatefulWidget {
     const Demopost({super.key});
@@ -36,7 +37,18 @@
               ),
               ),
               SizedBox(height: 20),
-            ElevatedButton(onPressed: (){}, child: Text( "kirim data")),
+            ElevatedButton(onPressed: ()async{
+              var myrespon =  await http.post(
+                Uri.parse("https://jsonplaceholder.typicode.com/users"),
+                body: {
+                  "nama": "Irsyad",
+                  "email": "mirsyadf@gmial.com",
+                  "telepon": "082233445566",
+                }
+              );
+              print(myrespon.statusCode);
+              print(myrespon.body);
+            }, child: Text( "kirim data")),
           ], 
 
         ),
