@@ -1,3 +1,4 @@
+import 'package:crud/pages/demodelete.dart';
 import 'package:crud/pages/demoget.dart';
 import 'package:crud/pages/demopatch.dart';
 import 'package:crud/pages/demopost.dart';
@@ -22,6 +23,7 @@ class Crud extends StatelessWidget {
         'demopost': (context) => Demopost(),
         'demoput': (context) => Demoput(),
         'demopatch': (context) => Demopatch(),
+        'demodelete': (context) => Demodelete(),
       },
     );
   }
