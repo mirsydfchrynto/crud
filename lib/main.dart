@@ -1,4 +1,5 @@
 import 'package:crud/pages/demoget.dart';
+import 'package:crud/pages/demopost.dart';
 import 'package:crud/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,8 @@ class Crud extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => Homepage(),
-        'demo': (context) => Demoget()
+        'demo': (context) => Demoget(),
+        'demopost': (context) => Demopost(),
       },
     );
   }
